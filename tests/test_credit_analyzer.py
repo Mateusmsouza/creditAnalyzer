@@ -10,3 +10,8 @@ def test_score_299_should_not_grant_credit():
     controller_credit_analyzer = CreditAnalyzer(customer)
     assert controller_credit_analyzer.grant_credit() is False
 
+def test_score_300_should_not_grant_credit():
+    customer = { "score": 300, "salary": 1000 }
+    controller_credit_analyzer = CreditAnalyzer(customer)
+    assert controller_credit_analyzer.grant_credit() is True
+    assert controller_credit_analyzer.credit_granted() == 1000
