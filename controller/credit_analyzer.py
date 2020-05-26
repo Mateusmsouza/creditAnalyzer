@@ -12,6 +12,8 @@ class CreditAnalyzer:
         elif score > 299 and score < 600:
             self.credit = 1000
             return True
+        self.credit = 2500
+        return True
             
     def credit_granted(self):
         return self.credit
